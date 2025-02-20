@@ -6,7 +6,8 @@ build/
 !**/src/test/**/build/
 
 # Ignorer les fichiers JAR
-*.jar
+rent-0.0.1-SNAPSHOT.jar
+rent-0.0.1-SNAPSHOT-plain.jar
 
 ### STS ###
 .apt_generated
