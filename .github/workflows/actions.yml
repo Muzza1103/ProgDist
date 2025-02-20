@@ -22,12 +22,10 @@ jobs:
           ls -l gradlew
       - name: Build and test
         run: |
-          cd rent
           export SHELL=/bin/bash
           ./gradlew build
       - name: Docker images
         run: |
-          cd rent
           export SHELL=/bin/bash
           docker build -t rent .
           docker images
