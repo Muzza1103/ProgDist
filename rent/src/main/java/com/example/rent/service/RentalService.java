@@ -39,7 +39,7 @@ public class RentalService {
             logger.info("Car found: " + car.getPlateNumber());
             return new ResponseEntity<>(car, HttpStatus.OK);
         }else{
-            logger.info("Car not found   : " + car.getPlateNumber()); //Test pour le merge
+            logger.info("Car not found : " + car.getPlateNumber()); //Test pour le merge
             return new ResponseEntity<>("There is no car with this plate number in the database.", HttpStatus.OK);
         }
     }
