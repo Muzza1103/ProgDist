@@ -1,10 +1,16 @@
 name: CI
 on:
-  - pull_request
+  push:
+    branches:
+      - main  # Vous pouvez remplacer par la branche que vous utilisez pour vos tests
+  pull_request:
+    branches:
+      - main  # Si vous voulez quand même tester lors de la création de pull request vers main
+
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: build
+    name: Build and Test
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -22,10 +28,12 @@ jobs:
           ls -l gradlew
       - name: Build and test
         run: |
+          cd rent
           export SHELL=/bin/bash
           ./gradlew build
       - name: Docker images
         run: |
+          cd rent
           export SHELL=/bin/bash
           docker build -t rent .
           docker images
